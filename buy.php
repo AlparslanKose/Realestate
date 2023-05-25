@@ -22,7 +22,6 @@
     <link rel="stylesheet" href="css/cs-skin-border.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/modernizr-2.6.2.min.js"></script>
-
 </head>
 
 <body>
@@ -58,77 +57,36 @@
                 </div>
             </header>
 
-               <!-- Sell -->
+            
+<?php
+require 'database.php';
+?>
 
-               <div id="sellForms">
+<?php
 
-<div class="boxSell">
-    <span class="borderLineSell"></span>
-    <form>
+// İlanları çekme sorgusu
+$sql = "SELECT * FROM sell";
+$result = $conn->query($sql);
 
-        <h2>Real Estate Sales Form</h2>
-        <div id="ContactInformation">
-            <div class="inputBoxSell">
-                <input type="text" name="name" required="required">
-                <span>Name</span>
-                <i></i>
-            </div>
-            <div class="inputBoxSell">
-                <input type="text" name="surname" required="required">
-                <span>Surname</span>
-                <i></i>
-            </div>
-            <div class="inputBoxSell">
-                <input type="text" name="phoneNumber" required="required">
-                <span>Phone</span>
-                <i></i>
-            </div>
-            <div class="inputBoxSell">
-                <input type="text" name="email" required="required">
-                <span>E-mail</span>
-                <i></i>
-            </div>
-        </div>
+// İlanları listeleyen form
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        echo "Title: " . $row["title"] . "<br>";
+        echo "Price: " . $row["price"] . "<br>";
+// Resim görüntüleme
+        echo "<img src='" . $row["picture"] . "' alt='İlan Resmi'><br>";
 
-        <div id="PropertyInformation">
-            <div class="inputBoxSell">
-                <input type="text" name="address" required="required">
-                <span>Address</span>
-                <i></i>
-            </div>
-            <div class="inputBoxSell">
-                <input type="text" name="size" required="required">
-                <span>Size</span>
-                <i></i>
-            </div>
-            <div class="inputBoxSell">
-                <input type="text" name="rooms" required="required">
-                <span>Rooms</span>
-                <i></i>
-            </div>
-        </div>
-        <div id="PriceInformation">
-            <div class="inputBoxSell">
-                <input type="text" name="price" required="required">
-                <span>Price</span>
-                <i></i>
-            </div>
-            <div class="inputBoxSell">
-                <input type="text" name="paymentType" required="required">
-                <span>PaymentType</span>
-                <i></i>
-            </div>
-            <div class="inputBoxSellFile">
-                <input type="file" id="picture" required="required">
-            </div>
-        </div>
+        echo "<hr>";
+    }
+} else {
+    echo "Henüz hiç ilan eklenmemiş.";
+}
 
-        <input type="submit" value="Sell">
-    </form>
-</div>
+// Veritabanı bağlantısını kapat
+$conn->close();
+?>
 
-</div>
-<!-- sell -->
+
 
             <div id="fh5co-contact" class="fh5co-contact">
 
