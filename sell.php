@@ -63,26 +63,7 @@
 
 <?php
 require 'database.php';
-?>
-
-<?php
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $targetDir = 'pics/'; // Kaydetmek istediğiniz klasörün yolu
-    $targetFile = $targetDir . basename($_FILES['picture']['name']); // Kaydetmek istediğiniz dosyanın tam yolu
-    $imageFileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION)); // Dosya uzantısını alın
-
-    // Sadece JPG ve PNG dosyalarını kabul edin
-    if ($imageFileType == 'jpg' || $imageFileType == 'jpeg' || $imageFileType == 'png') {
-        // Dosyayı belirtilen klasöre taşıyın
-        if (move_uploaded_file($_FILES['picture']['tmp_name'], $targetFile)) {
-            echo 'Dosya başarıyla yüklendi.';
-        } else {
-            echo 'Dosya yüklenirken bir hata oluştu.';
-        }
-    } else {
-        echo 'Sadece JPG ve PNG dosyaları kabul edilir.';
-    }
-}
+require 'upload.php';
 ?>
 
 <?php
@@ -103,7 +84,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "INSERT INTO sell (name, surname, phoneNumber, email, address, size, rooms, price, picture,title) VALUES ('$name', '$surname', '$phoneNumber','$email',  '$address', '$size', '$rooms', '$price', '$picture','$title')";
 	
     if ($conn->query($sql) === TRUE) {
-	header("Location: http://localhost/realestate/buy.php");  
+	header("Location: http://localhost/PhpProject1/buy.php");  
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
@@ -174,7 +155,7 @@ $conn->close();
                             </div>
  
 							</div>
-							<form method="post" enctype="multipart/form-data">
+							<form method="post" action="upload.php" enctype="multipart/form-data">
 								<label for="picture"></label>
 								<input type="file" name="picture" id="picture">
 								<input type="submit" value="Upload">

@@ -62,31 +62,86 @@
 require 'database.php';
 ?>
 
+
 <?php
 
 // İlanları çekme sorgusu
 $sql = "SELECT * FROM sell";
 $result = $conn->query($sql);
 
-// İlanları listeleyen form
-if ($result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
-        echo "Title: " . $row["title"] . "<br>";
-        echo "Price: " . $row["price"] . "<br>";
+// // İlanları listeleyen form
+// if ($result->num_rows > 0) {
+//     while ($row = $result->fetch_assoc()) {
+//         echo "Title: " . $row["title"] . "<br>";
+//         echo "Price: " . $row["price"] . "<br>";
 // Resim görüntüleme
-        echo "<img src='" . $row["picture"] . "' alt='İlan Resmi'><br>";
+    //     echo "<img src='" . $row["picture"] . "' alt='İlan Resmi'><br>";
 
-        echo "<hr>";
-    }
-} else {
-    echo "Henüz hiç ilan eklenmemiş.";
-}
+    //     echo "<hr>";
+    // }
 
-// Veritabanı bağlantısını kapat
-$conn->close();
+
+// // Veritabanı bağlantısını kapat
+// $conn->close();
 ?>
 
+<!-- deneme -->                
+<div id="fh5co-properties" class="fh5co-section-gray">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
+                <h3>Newest Properties</h3>
+                <p></p>
+            </div>
+        </div>
+        <div class="row">
+            <?php
+            // Veritabanından alınan verilere göre HTML kodu oluşturma
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    $image = $row["image"]; // Resim dosyasının yolunu veritabanından alın
+                    $status = $row["status"];
+                    $area = $row["area"];
+                    $bedroom = $row["bedroom"];
+                    $bathroom = $row["bathroom"];
+                    $garage = $row["garage"];
+                    $title = $row["title"];
+                    $price = $row["price"];
+                    $description = $row["description"];
+                    $address = $row["address"];
+            ?>
+                    <div class="col-md-4 animate-box">
+                        <div class="property">
+                            <a href="#" class="fh5co-property" style="background-image: url(<?php echo $image; ?>);">
+                                <span class="status"><?php echo $status; ?></span>
+                                <ul class="list-details">
+                                    <li><?php echo $area; ?> sq. m.</li>
+                                    <li><?php echo $bedroom; ?> Bedroom</li>
+                                    <li><?php echo $bathroom; ?> Bathroom</li>
+                                    <li><?php echo $garage; ?> Garage</li>
+                                </ul>
+                            </a>
+                            <div class="property-details">
+                                <h3><?php echo $title; ?></h3>
+                                <span class="price"><?php echo $price; ?></span>
+                                <p><?php echo $description; ?></p>
+                                <span class="address"><i class="icon-map"></i> | <?php echo $address; ?></span>
+                            </div>
+                        </div>
+                    </div>
+            <?php
+                }
+            } else {
+                echo "<div class='col-md-12'><p>No properties found.</p></div>";
+            }
 
+            // Veritabanı bağlantısını kapatma
+            $conn->close();
+            ?>
+        </div>
+    </div>
+</div>
+<!-- deneme -->
 
             <div id="fh5co-contact" class="fh5co-contact">
 
