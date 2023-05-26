@@ -8,7 +8,10 @@
     <meta name="description" content="RealEstate, Loan, Sale, Home, Sell, Buy, Rent, Search,Real Estate News" />
     <meta name="keywords" content="RealEstate, Loan, Sale, Home, Sell, Buy, Rent, Search,Real Estate News" />
     <meta name="author" content="Alparslan, Berk, Kerem" />
-    
+
+
+    <!-- will add later -->
+    <!--  ><link rel="shortcut icon" href="images/favicon.ico	" type="image/x-icon">  -->
     <link rel="shortcut icon" href="images/favicon.ico	" type="image/x-icon">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,300' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/animate.css">
@@ -45,7 +48,7 @@
                                 <li class="active"><a href="rent.php">Rent</a></li>
                                 <li><a href="sell.php">Sell</a></li>
 
-                                <li><a href="index.php#fh5co-search-map">Search</a></li>
+                                <li><a href="search.php">Search</a></li>
 
                                 <li><a href="loan-calculator.php">Loan Calculator</a></li>
 
@@ -58,77 +61,119 @@
                 </div>
             </header>
 
-              <!-- Sell -->
+<?php
+require 'database.php';
 
-              <div id="sellForms">
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $targetDir = 'pics/'; // Kaydetmek istediğiniz klasörün yolu
+    $targetFile = $targetDir . basename($_FILES['picture']['name']); // Kaydetmek istediğiniz dosyanın tam yolu
+    $imageFileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION)); // Dosya uzantısını alın
 
-<div class="boxSell">
-    <span class="borderLineSell"></span>
-    <form>
+    // Sadece JPG ve PNG dosyalarını kabul edin
+    if ($imageFileType == 'jpg' || $imageFileType == 'jpeg' || $imageFileType == 'png') {
+        // Dosyayı belirtilen klasöre taşıyın
+        if (move_uploaded_file($_FILES['picture']['tmp_name'], $targetFile)) {
+            // Dosya başarıyla yüklendiğinde veritabanına kaydedin
+            $name = $_POST["name"];
+            $surname = $_POST["surname"];
+            $phoneNumber = $_POST["phoneNumber"];
+            $email = $_POST["email"];
+            $address = $_POST["address"];
+            $size = $_POST["size"];
+            $rooms = $_POST["rooms"];
+            $price = $_POST["price"];
+            $picture = $targetFile;
+            $title = $_POST["title"];
 
-        <h2>Real Estate Sales Form</h2>
-        <div id="ContactInformation">
-            <div class="inputBoxSell">
-                <input type="text" name="name" required="required">
-                <span>Name</span>
-                <i></i>
-            </div>
-            <div class="inputBoxSell">
-                <input type="text" name="surname" required="required">
-                <span>Surname</span>
-                <i></i>
-            </div>
-            <div class="inputBoxSell">
-                <input type="text" name="phoneNumber" required="required">
-                <span>Phone</span>
-                <i></i>
-            </div>
-            <div class="inputBoxSell">
-                <input type="text" name="email" required="required">
-                <span>E-mail</span>
-                <i></i>
-            </div>
-        </div>
+            // Veritabanına ekleme sorgusu
+            $sql = "INSERT INTO rent (name, surname, phoneNumber, email, address, size, rooms, price, picture, title) VALUES ('$name', '$surname', '$phoneNumber', '$email',  '$address', '$size', '$rooms', '$price', '$picture', '$title')";
 
-        <div id="PropertyInformation">
-            <div class="inputBoxSell">
-                <input type="text" name="address" required="required">
-                <span>Address</span>
-                <i></i>
-            </div>
-            <div class="inputBoxSell">
-                <input type="text" name="size" required="required">
-                <span>Size</span>
-                <i></i>
-            </div>
-            <div class="inputBoxSell">
-                <input type="text" name="rooms" required="required">
-                <span>Rooms</span>
-                <i></i>
-            </div>
-        </div>
-        <div id="PriceInformation">
-            <div class="inputBoxSell">
-                <input type="text" name="price" required="required">
-                <span>Price</span>
-                <i></i>
-            </div>
-            <div class="inputBoxSell">
-                <input type="text" name="paymentType" required="required">
-                <span>PaymentType</span>
-                <i></i>
-            </div>
-            <div class="inputBoxSellFile">
-                <input type="file" id="picture" required="required">
-            </div>
-        </div>
+            if ($conn->query($sql) === TRUE) {
+                header("Location: http://localhost/realestate/buy.php");
+            } else {
+                echo "Error: " . $sql . "<br>" . $conn->error;
+            }
+        } else {
+            echo 'Dosya yüklenirken bir hata oluştu.';
+        }
+    } else {
+        echo 'Sadece JPG ve PNG dosyaları kabul edilir.';
+    }
+}
 
-        <input type="submit" value="Sell">
-    </form>
+// Veritabanı bağlantısını kapatma
+$conn->close();
+?>
+
+
+ <div id="rentForms">
+    <div class="boxSell">
+        <span class="borderLineSell"></span>
+        <form method="post" enctype="multipart/form-data">
+            <h2>Real Estate Rent Form</h2>
+            <div id="ContactInformation">
+                <div class="inputBoxSell">
+                    <input type="text" name="title" required="required">
+                    <span>Title</span>
+                    <i></i>
+                </div>
+                <div class="inputBoxSell">
+                    <input type="text" name="name" required="required">
+                    <span>Name</span>
+                    <i></i>
+                </div>
+                <div class="inputBoxSell">
+                    <input type="text" name="surname" required="required">
+                    <span>Surname</span>
+                    <i></i>
+                </div>
+                <div class="inputBoxSell">
+                    <input type="text" name="phoneNumber" required="required">
+                    <span>Phone</span>
+                    <i></i>
+                </div>
+                <div class="inputBoxSell">
+                    <input type="text" name="email" required="required">
+                    <span>E-mail</span>
+                    <i></i>
+                </div>
+            </div>
+            <div id="PropertyInformation">
+                <div class="inputBoxSell">
+                    <input type="text" name="address" required="required">
+                    <span>Address</span>
+                    <i></i>
+                </div>
+                <div class="inputBoxSell">
+                    <input type="text" name="size" required="required">
+                    <span>Size</span>
+                    <i></i>
+                </div>
+                <div class="inputBoxSell">
+                    <input type="text" name="rooms" required="required">
+                    <span>Rooms</span>
+                    <i></i>
+                </div>
+            </div>
+            <div id="PriceInformation">
+                <div class="inputBoxSell">
+                    <input type="text" name="price" required="required">
+                    <span>Price</span>
+                    <i></i>
+                </div>
+                <div class="inputBoxSell">
+                    <label for="picture"></label>
+                    <input type="file" name="picture" id="picture">
+                </div>
+            </div>
+            <input type="submit" value="Upload">
+        </form>
+    </div>
 </div>
 
+
 </div>
-<!-- sell -->
+
 
             <div id="fh5co-contact" class="fh5co-contact">
 

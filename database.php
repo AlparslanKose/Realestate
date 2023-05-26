@@ -10,6 +10,6 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
 // Bağlantıyı kontrol etme
 if ($conn->connect_error) {
-    die("Database connection failed: " . $conn->connect_error);
+    die("Veritabanı bağlantısı başarısız: " . $conn->connect_error);
 }
 ?>

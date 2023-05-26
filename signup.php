@@ -1,5 +1,10 @@
 <!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
 <html class="no-js">
+<!--<![endif]-->
 
 <head>
     <meta charset="utf-8">
@@ -9,21 +14,64 @@
     <meta name="description" content="RealEstate, Loan, Sale, Home, Sell, Buy, Rent, Search,Real Estate News" />
     <meta name="keywords" content="RealEstate, Loan, Sale, Home, Sell, Buy, Rent, Search,Real Estate News" />
     <meta name="author" content="Alparslan, Berk, Kerem" />
-    
+
+    <!-- 
+	//////////////////////////////////////////////////////
+
+	RealEstate
+
+	DESIGNED & DEVELOPED by Alparslan Köse
+		
+	Website: 		https://alparslankose.github.io/Realestate/
+	Email: 			alparslan.kosee@gmail.com
+	Instagram: 		https://www.instagram.com/alparslan.exe/
+
+	//////////////////////////////////////////////////////
+	 -->
+
+    <!-- Facebook and Twitter integration -->
+    <meta property="og:title" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="" />
+    <meta property="og:description" content="" />
+    <meta name="twitter:title" content="" />
+    <meta name="twitter:image" content="" />
+    <meta name="twitter:url" content="" />
+    <meta name="twitter:card" content="" />
+
+    <!-- Place favicon.ico -->
     <link rel="shortcut icon" href="images/favicon.ico	" type="image/x-icon">
+    <!-- Place Text Type -->
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,300' rel='stylesheet' type='text/css'>
+    <!-- Animate.css -->
     <link rel="stylesheet" href="css/animate.css">
+    <!-- Icomoon Icon Fonts-->
     <link rel="stylesheet" href="css/icomoon.css">
+    <!-- Bootstrap  -->
     <link rel="stylesheet" href="css/bootstrap.css">
+    <!-- Superfish -->
     <link rel="stylesheet" href="css/superfish.css">
+    <!-- Flexslider  -->
     <link rel="stylesheet" href="css/flexslider.css">
+    <!-- Magnific Popup -->
     <link rel="stylesheet" href="css/magnific-popup.css">
+    <!-- Date Picker -->
     <link rel="stylesheet" href="css/bootstrap-datepicker.min.css">
+    <!-- CS Select -->
     <link rel="stylesheet" href="css/cs-select.css">
     <link rel="stylesheet" href="css/cs-skin-border.css">
+
     <link rel="stylesheet" href="css/style.css">
+
+
+    <!-- Modernizr JS -->
     <script src="js/modernizr-2.6.2.min.js"></script>
-    
+    <!-- FOR IE9 below -->
+    <!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+
 </head>
 
 <body>
@@ -47,7 +95,7 @@
                                 <li><a href="rent.php">Rent</a></li>
                                 <li><a href="sell.php">Sell</a></li>
 
-                                <li><a href="index.php#fh5co-search-map">Search</a></li>
+                                <li><a href="search.php">Search</a></li>
 
                                 <li><a href="loan-calculator.php">Loan Calculator</a></li>
 
@@ -76,9 +124,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "INSERT INTO register (username, email, password) VALUES ('$username', '$email', '$password')";
  
     if ($conn->query($sql) === TRUE) {
-        echo "   <script>alert('Registration successfully created!')</script>";
+        echo "   <script>alert('Kayıt başarıyla oluşturuldu!')</script>";
     } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
+        echo "Hata: " . $sql . "<br>" . $conn->error;
     }
 }
 

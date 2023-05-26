@@ -2263,7 +2263,7 @@ div.cs-select span {
 .boxSignUp {
     position: relative;
     width: 380px;
-    height: 620px;
+    height: 420px;
     background: #1a1a1a;
     border-radius: 8px;
     overflow: hidden;
@@ -2275,7 +2275,7 @@ div.cs-select span {
     top: -50%;
     left: -50%;
     width: 380px;
-    height: 620px;
+    height: 420px;
     background: linear-gradient(0deg, transparent, transparent, #fff, #fff, #fff);
     z-index: 1;
     transform-origin: bottom right;
@@ -2288,7 +2288,7 @@ div.cs-select span {
     top: -50%;
     left: -50%;
     width: 380px;
-    height: 620px;
+    height: 420px;
     background: linear-gradient(0deg, transparent, transparent, #fff, #fff, #fff);
     z-index: 1;
     transform-origin: bottom right;
@@ -2456,6 +2456,21 @@ div.cs-select span {
     background: #23242a;
 }
 
+
+/* rentForms */
+
+#rentForms {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background: #23242a;
+}
 
 /* flex */
 
@@ -2637,4 +2652,86 @@ div.cs-select span {
 
 .boxSell form input[type="submit"]:active {
     scale: 0.9;
+}
+
+#bodyBuy {
+    background-color: #333333;
+}
+
+#containerBuy {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#containerBuy .card {
+    background-color: #FFFFFF;
+    color: #333333;
+    width: 300px;
+    margin: 20px;
+    padding: 20px;
+    border: 2px solid #44C662;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+#containerBuy .card img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+#containerBuy .card-details h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+#containerBuy .card-details p {
+    margin-bottom: 5px;
+}
+
+#containerBuy .card-details strong {
+    font-weight: bold;
+    color: #44C662;
+}
+
+#bodySell {
+    background-color: #333333;
+}
+
+#containerSell {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#containerSell .card {
+    background-color: #FFFFFF;
+    color: #333333;
+    width: 300px;
+    margin: 20px;
+    padding: 20px;
+    border: 2px solid #44C662;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+#containerSell .card img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+#containerSell .card-details h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+#containerSell .card-details p {
+    margin-bottom: 5px;
+}
+
+#containerSell .card-details strong {
+    font-weight: bold;
+    color: #44C662;
 }

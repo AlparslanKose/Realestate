@@ -9,6 +9,9 @@
     <meta name="keywords" content="RealEstate, Loan, Sale, Home, Sell, Buy, Rent, Search,Real Estate News" />
     <meta name="author" content="Alparslan, Berk, Kerem" />
 
+
+    <!-- will add later -->
+    <!--  ><link rel="shortcut icon" href="images/favicon.ico	" type="image/x-icon">  -->
     <link rel="shortcut icon" href="images/favicon.ico	" type="image/x-icon">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,300' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/animate.css">
@@ -45,7 +48,7 @@
                                 <li><a href="rent.php">Rent</a></li>
                                 <li><a href="sell.php">Sell</a></li>
 
-                                <li><a href="index.php#fh5co-search-map">Search</a></li>
+                                <li><a href="search.php">Search</a></li>
 
                                 <li><a href="loan-calculator.php">Loan Calculator</a></li>
 
@@ -75,7 +78,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
 // Bağlantıyı kontrol etme
 if ($conn->connect_error) {
-    die("Database connection failed: " . $conn->connect_error);
+    die("Veritabanı bağlantısı başarısız: " . $conn->connect_error);
 }
 
 // Form gönderildiğinde çalışacak kod
@@ -93,14 +96,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $row = $result->fetch_assoc();
         if ($password === $row["password"]) {
             // Giriş başarılı ise kullanıcıyı yönlendirin veya işlem yapın
-            echo "Login successful!";
+            echo "Giriş başarılı!";
         } else {
             // Parola eşleşmedi, hata mesajı göster
-            echo "Invalid username or password!";
+            echo "Geçersiz kullanıcı adı veya parola!";
         }
     } else {
         // Kullanıcı kaydı bulunamadı, hata mesajı göster
-        echo "Invalid username or password!";
+        echo "Geçersiz kullanıcı adı veya parola!";
     }
 }
 ?>

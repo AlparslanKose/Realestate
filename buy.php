@@ -44,7 +44,7 @@
                                 <li><a href="rent.php">Rent</a></li>
                                 <li><a href="sell.php">Sell</a></li>
 
-                                <li><a href="index.php#fh5co-search-map">Search</a></li>
+                                <li><a href="search.php">Search</a></li>
 
                                 <li><a href="loan-calculator.php">Loan Calculator</a></li>
 
@@ -62,86 +62,75 @@
 require 'database.php';
 ?>
 
+<div id="bodyBuy">
+    <div id="containerBuy">
+        <?php
+        $sql = "SELECT * FROM sell";
+        $result = $conn->query($sql);
 
-<?php
-
-// İlanları çekme sorgusu
-$sql = "SELECT * FROM sell";
-$result = $conn->query($sql);
-
-// // İlanları listeleyen form
-// if ($result->num_rows > 0) {
-//     while ($row = $result->fetch_assoc()) {
-//         echo "Title: " . $row["title"] . "<br>";
-//         echo "Price: " . $row["price"] . "<br>";
-// Resim görüntüleme
-    //     echo "<img src='" . $row["picture"] . "' alt='İlan Resmi'><br>";
-
-    //     echo "<hr>";
-    // }
-
-
-// // Veritabanı bağlantısını kapat
-// $conn->close();
-?>
-
-<!-- deneme -->                
-<div id="fh5co-properties" class="fh5co-section-gray">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
-                <h3>Newest Properties</h3>
-                <p></p>
-            </div>
-        </div>
-        <div class="row">
-            <?php
-            // Veritabanından alınan verilere göre HTML kodu oluşturma
-            if ($result->num_rows > 0) {
-                while ($row = $result->fetch_assoc()) {
-                    $image = $row["image"]; // Resim dosyasının yolunu veritabanından alın
-                    $status = $row["status"];
-                    $area = $row["area"];
-                    $bedroom = $row["bedroom"];
-                    $bathroom = $row["bathroom"];
-                    $garage = $row["garage"];
-                    $title = $row["title"];
-                    $price = $row["price"];
-                    $description = $row["description"];
-                    $address = $row["address"];
-            ?>
-                    <div class="col-md-4 animate-box">
-                        <div class="property">
-                            <a href="#" class="fh5co-property" style="background-image: url(<?php echo $image; ?>);">
-                                <span class="status"><?php echo $status; ?></span>
-                                <ul class="list-details">
-                                    <li><?php echo $area; ?> sq. m.</li>
-                                    <li><?php echo $bedroom; ?> Bedroom</li>
-                                    <li><?php echo $bathroom; ?> Bathroom</li>
-                                    <li><?php echo $garage; ?> Garage</li>
-                                </ul>
-                            </a>
-                            <div class="property-details">
-                                <h3><?php echo $title; ?></h3>
-                                <span class="price"><?php echo $price; ?></span>
-                                <p><?php echo $description; ?></p>
-                                <span class="address"><i class="icon-map"></i> | <?php echo $address; ?></span>
-                            </div>
-                        </div>
-                    </div>
-            <?php
-                }
-            } else {
-                echo "<div class='col-md-12'><p>No properties found.</p></div>";
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                // Create card view
+                echo '<div class="card">';
+				echo '<p><strong> <center> Sale </center></strong>'  . '</p>';
+                echo '<img src="' . $row["picture"] . '" alt="House Image">';
+                echo '<div class="card-details">';				                      
+                echo '<p><strong>Price: </strong>' . $row["price"] .' EUR'. '</p>';
+                echo '<p><strong>Rooms: </strong>' . $row["rooms"] . '</p>';
+                echo '<p><strong>Area: </strong>' . $row["size"] ." sq. m.". '</p>';
+                echo '<p><strong>Location: </strong>' . $row["address"] . '</p>';
+              /*  echo '<p><strong>Name: </strong>' . $row["name"] . '</p>';
+                echo '<p><strong>Surname: </strong>' . $row["surname"] . '</p>';*/
+                echo '<p><strong>Phone: </strong>' . $row["phoneNumber"] . '</p>'; 
+                echo '<p><strong>Email: </strong>' . $row["email"] . '</p>';
+				echo '<br>';
+				echo '<h2>' . $row["title"] . '</h2>';  
+                echo '</div>';
+                echo '</div>';
             }
+        } else {
+            echo "Kayıt bulunamadı.";
+        }
+      
+        ?>
+		
+		<div id="bodySell">
+    <div id="containerSell">
+        <?php
+        $sql = "SELECT * FROM rent";
+        $result = $conn->query($sql);
 
-            // Veritabanı bağlantısını kapatma
-            $conn->close();
-            ?>
-        </div>
-    </div>
-</div>
-<!-- deneme -->
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                // Create card view
+                echo '<div class="card">';
+				echo '<p><strong> <center> Rent </center></strong>'  . '</p>';
+                echo '<img src="' . $row["picture"] . '" alt="House Image">';
+                echo '<div class="card-details">';				                      
+                echo '<p><strong>Price: </strong>' . $row["price"] .' EUR'. '</p>';
+                echo '<p><strong>Rooms: </strong>' . $row["rooms"] . '</p>';
+                echo '<p><strong>Area: </strong>' . $row["size"] ." sq. m.". '</p>';
+                echo '<p><strong>Location: </strong>' . $row["address"] . '</p>';
+              /*  echo '<p><strong>Name: </strong>' . $row["name"] . '</p>';
+                echo '<p><strong>Surname: </strong>' . $row["surname"] . '</p>';*/
+                echo '<p><strong>Phone: </strong>' . $row["phoneNumber"] . '</p>'; 
+                echo '<p><strong>Email: </strong>' . $row["email"] . '</p>';
+				echo '<br>';
+				echo '<h2>' . $row["title"] . '</h2>';  
+                echo '</div>';
+                echo '</div>';
+            }
+        } else {
+            echo "Kayıt bulunamadı.";
+        }
+        $conn->close();
+        ?>
+		
+    </div></div>
+
+
+
+
 
             <div id="fh5co-contact" class="fh5co-contact">
 

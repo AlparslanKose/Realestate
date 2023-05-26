@@ -46,7 +46,7 @@
                                 <li><a href="rent.php">Rent</a></li>
                                 <li><a href="sell.php">Sell</a></li>
 
-                                <li><a href="index.php#fh5co-search-map">Search</a></li>
+                                <li><a href="search.php">Search</a></li>
 
                                 <li class="active"><a href="loan-calculator.php">Loan Calculator</a></li>
 
