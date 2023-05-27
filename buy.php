@@ -70,11 +70,12 @@ require 'database.php';
 
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                // Create card view
                 echo '<div class="card">';
 				echo '<p><strong> <center> Sale </center></strong>'  . '</p>';
+				echo '<h4>' . $row["title"] . '</h4>'; 
                 echo '<img src="' . $row["picture"] . '" alt="House Image">';
-                echo '<div class="card-details">';				                      
+                echo '<div class="card-details">';
+				echo '<p><strong>ID: </strong>' . $row["sell_id"] .''. '</p>';
                 echo '<p><strong>Price: </strong>' . $row["price"] .' EUR'. '</p>';
                 echo '<p><strong>Rooms: </strong>' . $row["rooms"] . '</p>';
                 echo '<p><strong>Area: </strong>' . $row["size"] ." sq. m.". '</p>';
@@ -89,7 +90,7 @@ require 'database.php';
                 echo '</div>';
             }
         } else {
-            echo "Kayıt bulunamadı.";
+            echo "";
         }
       
         ?>
@@ -105,8 +106,10 @@ require 'database.php';
                 // Create card view
                 echo '<div class="card">';
 				echo '<p><strong> <center> Rent </center></strong>'  . '</p>';
+				echo '<h4>' . $row["title"] . '</h4>'; 
                 echo '<img src="' . $row["picture"] . '" alt="House Image">';
-                echo '<div class="card-details">';				                      
+                echo '<div class="card-details">';		
+				echo '<p><strong>ID: </strong>' . $row["rent_id"] .''. '</p>';			
                 echo '<p><strong>Price: </strong>' . $row["price"] .' EUR'. '</p>';
                 echo '<p><strong>Rooms: </strong>' . $row["rooms"] . '</p>';
                 echo '<p><strong>Area: </strong>' . $row["size"] ." sq. m.". '</p>';
@@ -114,14 +117,12 @@ require 'database.php';
               /*  echo '<p><strong>Name: </strong>' . $row["name"] . '</p>';
                 echo '<p><strong>Surname: </strong>' . $row["surname"] . '</p>';*/
                 echo '<p><strong>Phone: </strong>' . $row["phoneNumber"] . '</p>'; 
-                echo '<p><strong>Email: </strong>' . $row["email"] . '</p>';
-				echo '<br>';
-				echo '<h2>' . $row["title"] . '</h2>';  
+                echo '<p><strong>Email: </strong>' . $row["email"] . '</p>';				
                 echo '</div>';
                 echo '</div>';
             }
         } else {
-            echo "Kayıt bulunamadı.";
+            echo "";
         }
         $conn->close();
         ?>
@@ -135,25 +136,33 @@ require 'database.php';
             <div id="fh5co-contact" class="fh5co-contact">
 
             </div>
+
+
+
+
+        </div>
+
+    </div>
+
             <footer>
                 <div id="footer">
                     <div class="container">
                         <div class="row row-bottom-padded-md">
-                            <div class="col-md-3">
-                                <h3 class="section-title">About Real Estate</h3>
-                                <p>"Our real estate website provides a user-friendly platform for buyers, sellers, and renters to connect and find their perfect property. With a vast database of listings, advanced search filters, and expert advice from experienced
-                                    agents, we strive to make the process of buying, selling, or renting a property as smooth and efficient as possible."</p>
-                            </div>
+                    <div class="col-md-3">
+                        <h3 class="section-title">About RealEstate.BG</h3>
+                        <p>"Our real estate website provides a user-friendly platform for buyers, sellers, and renters to connect and find their perfect property."</p>
+                        <p>Home is not about walls. <br> -Poppins</p>
+                    </div>
 
                             <div class="col-md-3 col-md-push-1">
                                 <h3 class="section-title">Links</h3>
                                 <ul>
 
-                                    <li><a href="index.html">News</a></li>
-                                    <li><a href="sell.html">Sell</a></li>
-                                    <li><a href="rent.html">Rent</a></li>
-                                    <li><a href="buy.html">Buy</a></li>
-                                    <li><a href="search.html ">Search</a></li>
+                                    <li><a href="index.php">News</a></li>
+                                    <li><a href="sell.php">Sell</a></li>
+                                    <li><a href="rent.php">Rent</a></li>
+                                    <li><a href="buy.php">Buy</a></li>
+                                    <li><a href="search.php ">Search</a></li>
                                     <!-- 
                                     <li><a href="signin.html ">signin</a></li>
                                     <li><a href="signup.html ">Sign Up</a></li>
@@ -195,7 +204,7 @@ require 'database.php';
                                     <a href="# "><i class="icon-dribbble2 "></i></a>
                                     <a href="# "><i class="icon-youtube "></i></a>
                                 </p>
-                                <p>Copyright 2023 RealEstate.bg <a href="https://github.com/AlparslanKose/Realestate ">Module</a>. All Rights Reserved.
+                                <p>Copyright 2023 RealEstate.bg 
                                     <br>Made with <i class="icon-heart3 "></i> by
                                     <a href="https://www.instagram.com/alparslan.exe/ " target="_blank ">AlparslanKöse</a>
                                     <a href="# " target="_blank ">,Kerem</a>
@@ -207,14 +216,7 @@ require 'database.php';
                     </div>
                 </div>
             </footer>
-
-
-
-        </div>
-
-    </div>
-
-
+			
     <script src="js/jquery.min.js "></script>
     <script src="js/jquery.easing.1.3.js "></script>
     <script src="js/bootstrap.min.js "></script>

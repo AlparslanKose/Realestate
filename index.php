@@ -38,9 +38,9 @@
                         <h1 id="fh5co-logo"><a href="index.php"><i class="icon-home"></i>Real<span>Estate.bg</span></a></h1>
                         <nav id="fh5co-menu-wrap" role="navigation">
                             <ul class="sf-menu" id="fh5co-primary-menu">
-
-                                <li class="active"><a href="index.php">News</a></li>
-
+							
+							
+								<li><a href="index.php">News</a></li>
                                 <li><a href="index.php#fh5co-about">Agent Finder</a></li>
 
                                 <li><a href="buy.php">Buy</a></li>
@@ -52,7 +52,8 @@
                                 <li><a href="loan-calculator.php">Loan Calculator</a></li>
 
                                 <li><a href="signin.php">Login</a></li>
-                                <li><a href="signup.php">Sign Up</a></li>
+								<li class="active"><a href="signup.php">Sign Up</a></li>
+                               
 
                             </ul>
                         </nav>
@@ -135,7 +136,7 @@
                     </ul>
                 </div>
             </aside>
-
+<!-- 
             <div id="fh5co-search-map">
                 <div class="search-property">
                     <div class="s-holder">
@@ -200,7 +201,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>-->
             <div class="map" style="background-image: url(images/cover_bg_1.jpg);">
             </div>
         </div>
@@ -418,7 +419,7 @@
                             <li><a href="index.php">Sell</a></li>
                             <li><a href="index.php">News</a></li>
                             <li><a href="#fh5co-search-map">Search</a></li>
-                            <li><a href="loan-calculator.html">Loan Calculator</a></li>
+                            <li><a href="loan-calculator.php">Loan Calculator</a></li>
                             <li><a href="signin.php">Login</a></li>
                             <li class="active"><a href="signup.php">Sign Up</a></li>
                             <!-- 

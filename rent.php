@@ -141,7 +141,7 @@ $conn->close();
             <div id="PropertyInformation">
                 <div class="inputBoxSell">
                     <input type="text" name="address" required="required">
-                    <span>Address</span>
+                    <span>Location</span>
                     <i></i>
                 </div>
                 <div class="inputBoxSell">
@@ -192,11 +192,11 @@ $conn->close();
                                 <h3 class="section-title">Links</h3>
                                 <ul>
 
-                                    <li><a href="index.html">News</a></li>
-                                    <li><a href="sell.html">Sell</a></li>
-                                    <li><a href="rent.html">Rent</a></li>
-                                    <li><a href="buy.html">Buy</a></li>
-                                    <li><a href="search.html ">Search</a></li>
+                                    <li><a href="index.php">News</a></li>
+                                    <li><a href="sell.php">Sell</a></li>
+                                    <li><a href="rent.php">Rent</a></li>
+                                    <li><a href="buy.php">Buy</a></li>
+                                    <li><a href="search.php ">Search</a></li>
                                     <!-- 
                                     <li><a href="signin.html ">signin</a></li>
                                     <li><a href="signup.html ">Sign Up</a></li>
@@ -256,6 +256,7 @@ $conn->close();
         </div>
 
     </div>
+
 
 
     <script src="js/jquery.min.js "></script>

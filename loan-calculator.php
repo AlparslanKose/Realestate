@@ -58,15 +58,14 @@
                     </div>
                 </div>
             </header>
-
             <!--Loan Calculator -->
-            <div align="center"><p><a href="https://www.mortgagecalculator.org" target="_blank">
-                </a><br />
-                <iframe src="https://www.mortgagecalculator.org/free-tools/calculator/" frameborder="0" width="560px" height="270" scrolling="no"></iframe>
-                <br/> <font size="2" color="#000000">RealEstate.bg</font></a></p></div>
-								
+		<div><p align="center"><a href=""><img   alt="" border="0" style="max-width: 100%;" target="_blank"></a></p> <iframe src="https://www.mortgagecalculator.org/webmasters/?downpayment=50000&homevalue=300000&loanamount=250000&interestrate=4&loanterm=30&propertytax=2400&pmi=1&homeinsurance=1000&monthlyhoa=0" 
+		style="width: 100%; height: 1200px; border: 0;"></iframe>
+		<div style="font-family: Arial; height: 36px; top: -36px; padding: 0 8px 0 0; box-sizing: border-box; text-align: right; background: #f6f9f9; border: 1px solid #ccc; color: #868686; line-height: 34px; font-size: 12px; position: relative;"> 
+		<center> 	<a style="color: #868686;"  target="_blank">REALESTATE.BG</a> </center>
+		</div>
+			</div>		
             <div id="fh5co-contact" class="fh5co-contact">
-
             </div>
             <footer>
                 <div id="footer">
@@ -82,11 +81,11 @@
                                 <h3 class="section-title">Links</h3>
                                 <ul>
 
-                                    <li><a href="index.html">News</a></li>
-                                    <li><a href="sell.html">Sell</a></li>
-                                    <li><a href="rent.html">Rent</a></li>
-                                    <li><a href="buy.html">Buy</a></li>
-                                    <li><a href="search.html ">Search</a></li>
+                                    <li><a href="index.php">News</a></li>
+                                    <li><a href="sell.php">Sell</a></li>
+                                    <li><a href="rent.php">Rent</a></li>
+                                    <li><a href="buy.php">Buy</a></li>
+                                    <li><a href="search.php ">Search</a></li>
                                     <!-- 
                                     <li><a href="login.html ">Login</a></li>
                                     <li><a href="signup.html ">Sign Up</a></li>
