@@ -656,6 +656,9 @@ figure {
     color: #44C662 !important;
 }
 
+
+/* search */
+
 #fh5co-search-map {
     width: 100%;
     float: left;
@@ -783,6 +786,9 @@ figure {
     width: 66.5%;
     float: right;
 }
+
+
+/* -search- */
 
 div.cs-select span {
     padding: 10px 10px;
@@ -2263,7 +2269,7 @@ div.cs-select span {
 .boxSignUp {
     position: relative;
     width: 380px;
-    height: 420px;
+    height: 540px;
     background: #1a1a1a;
     border-radius: 8px;
     overflow: hidden;
@@ -2275,7 +2281,7 @@ div.cs-select span {
     top: -50%;
     left: -50%;
     width: 380px;
-    height: 420px;
+    height: 540px;
     background: linear-gradient(0deg, transparent, transparent, #fff, #fff, #fff);
     z-index: 1;
     transform-origin: bottom right;
@@ -2288,7 +2294,7 @@ div.cs-select span {
     top: -50%;
     left: -50%;
     width: 380px;
-    height: 420px;
+    height: 540px;
     background: linear-gradient(0deg, transparent, transparent, #fff, #fff, #fff);
     z-index: 1;
     transform-origin: bottom right;
@@ -2308,7 +2314,7 @@ div.cs-select span {
     top: -50%;
     left: -50%;
     width: 380px;
-    height: 620px;
+    height: 540px;
     background: linear-gradient(0deg, transparent, transparent, #44C662, #44C662, #44C662);
     z-index: 1;
     transform-origin: bottom right;
@@ -2322,7 +2328,7 @@ div.cs-select span {
     top: -50%;
     left: -50%;
     width: 380px;
-    height: 620px;
+    height: 540px;
     background: linear-gradient(0deg, transparent, transparent, #44C662, #44C662, #44C662);
     z-index: 1;
     transform-origin: bottom right;
@@ -2471,6 +2477,7 @@ div.cs-select span {
     height: 100vh;
     background: #23242a;
 }
+
 
 /* flex */
 
@@ -2659,13 +2666,14 @@ div.cs-select span {
 }
 
 #containerBuy {
+    border-bottom: 2px solid #44C662;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 #containerBuy .card {
-    background-color: #FFFFFF;
+    background: #FFFFFF;
     color: #333333;
     width: 300px;
     margin: 20px;
@@ -2678,6 +2686,7 @@ div.cs-select span {
 #containerBuy .card img {
     width: 100%;
     height: auto;
+    fill: cover;
     margin-bottom: 10px;
 }
 
@@ -2732,6 +2741,242 @@ div.cs-select span {
 }
 
 #containerSell .card-details strong {
+    font-weight: bold;
+    color: #44C662;
+}
+
+
+/* search */
+
+.boxSell {
+    position: relative;
+    width: 80vw;
+    height: 70vh;
+    background: #44C662;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.borderLineSell {
+    position: absolute;
+    top: 0;
+    inset: 0;
+}
+
+.boxSell form {
+    position: absolute;
+    inset: 4px;
+    background: #222;
+    padding: 50px 40px;
+    border-radius: 8px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.boxSell form h2 {
+    color: #44C662;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 0.1em;
+}
+
+.boxSell form .inputBoxSell {
+    position: relative;
+    width: 300px;
+    margin-top: 35px;
+}
+
+.boxSell form .inputBoxSell input {
+    font-weight: 700;
+    position: relative;
+    width: 100%;
+    padding: 20px 10px 10px;
+    background: transparent;
+    outline: none;
+    border: none;
+    box-shadow: none;
+    color: #23242a;
+    font-size: 1em;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+    z-index: 10;
+}
+
+.boxSell form .inputBoxSell span {
+    position: absolute;
+    left: 0;
+    padding: 20px 0px 10px;
+    pointer-events: none;
+    color: #848484;
+    font-size: 1em;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+}
+
+.boxSell form .inputBoxSell input:valid~span,
+.boxSell form .inputBoxSell input:focus~span {
+    color: #44C662;
+    font-size: 0.75em;
+    transform: translateY(-34px);
+}
+
+.boxSell form .inputBoxSell i {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: 0.5s;
+    pointer-events: none;
+}
+
+.boxSell form .inputBoxSell input:valid~i,
+.boxSell form .inputBoxSell input:focus~i {
+    height: 44px;
+}
+
+.boxSell form .linksSell {
+    display: flex;
+    justify-content: end;
+}
+
+.boxSell form .linksSell a {
+    margin: 10px 0;
+    font-size: 0.75em;
+    color: #848484;
+    text-decoration: none;
+}
+
+.boxSell form .linksSell a:hover {
+    color: #44C662;
+}
+
+.boxSell form input[type="submit"] {
+    border: none;
+    outline: none;
+    padding: 9px 25px;
+    color: #44C662;
+    background: #000;
+    cursor: pointer;
+    font-size: 0.9em;
+    border-radius: 4px;
+    font-weight: 600;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.boxSell form input[type="submit"]:active {
+    scale: 0.9;
+}
+
+
+/* search */
+
+#searchBody .searchBox {
+    display: flex;
+    flex-flow: row;
+}
+
+#searchBody .searchBoxButton {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+#searchBody {
+    font-family: 'Courier New', Courier, monospace;
+    margin: 10px;
+    padding: 20px;
+    background: linear-gradient(165deg, #fdfdfd, #f1f1f1, #fdfdfd);
+    border: 2px solid #333;
+}
+
+#searchBody h2 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2.5em;
+    color: #333;
+    text-decoration: none;
+}
+
+#searchBody label {
+    padding: 10px;
+    display: block;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1em;
+    color: #333;
+    text-decoration: none;
+}
+
+#searchBody input[type="text"] {
+    background: linear-gradient(90deg, #333, transparent);
+    color: #44C662;
+    border: none;
+    outline: none;
+    color: 333;
+    font-weight: 700;
+}
+
+#search-button {
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 50px;
+    background: #333333;
+    color: #44C662;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+}
+
+.searchBoxButton input[type="submit"]:active {
+    scale: 0.9;
+}
+
+
+/* search result */
+
+#bodySearch {
+    background-color: #333333;
+    margin: 0;
+    padding: 20px;
+}
+
+#containerSearch {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+#containerSearch .card {
+    background: #FFFFFF;
+    color: #333333;
+    width: 300px;
+    margin: 20px;
+    padding: 20px;
+    border: 2px solid #44C662;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+#containerSearch .card img {
+    width: 100%;
+    height: auto;
+    fill: cover;
+    margin-bottom: 10px;
+}
+
+#containerSearch .card-details h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+#containerSearch .card-details p {
+    margin-bottom: 5px;
+}
+
+#containerSearch .card-details strong {
     font-weight: bold;
     color: #44C662;
 }

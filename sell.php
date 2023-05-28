@@ -107,7 +107,7 @@ $conn->close();
     <div class="boxSell">
         <span class="borderLineSell"></span>
         <form method="post" enctype="multipart/form-data">
-            <h2>Real Estate Rent Form</h2>
+            <h2>Real Estate Sale Form</h2>
             <div id="ContactInformation">
                 <div class="inputBoxSell">
                     <input type="text" name="title" required="required">
@@ -158,7 +158,7 @@ $conn->close();
                     <span>Price</span>
                     <i></i>
                 </div>
-                <div class="inputBoxSell">
+                <div class="inputBoxSellFile">
                     <label for="picture"></label>
                     <input type="file" name="picture" id="picture">
                 </div>

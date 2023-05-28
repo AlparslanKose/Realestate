@@ -84,8 +84,7 @@ require 'database.php';
                 echo '<p><strong>Surname: </strong>' . $row["surname"] . '</p>';*/
                 echo '<p><strong>Phone: </strong>' . $row["phoneNumber"] . '</p>'; 
                 echo '<p><strong>Email: </strong>' . $row["email"] . '</p>';
-				echo '<br>';
-				echo '<h2>' . $row["title"] . '</h2>';  
+				echo '<br>'; 
                 echo '</div>';
                 echo '</div>';
             }

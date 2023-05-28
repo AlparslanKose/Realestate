@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Real Estate | Login</title>
+    <title>Real Estate | Rent</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="RealEstate, Loan, Sale, Home, Sell, Buy, Rent, Search,Real Estate News" />
     <meta name="keywords" content="RealEstate, Loan, Sale, Home, Sell, Buy, Rent, Search,Real Estate News" />
@@ -161,7 +161,7 @@ $conn->close();
                     <span>Price</span>
                     <i></i>
                 </div>
-                <div class="inputBoxSell">
+                <div class="inputBoxSellFile">
                     <label for="picture"></label>
                     <input type="file" name="picture" id="picture">
                 </div>

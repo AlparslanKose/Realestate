@@ -3,16 +3,14 @@
 <head>
     <title>Real Estate Search</title>
     <link rel="stylesheet" href="css/style.css">
-	<head>
-    <meta charset="utf-8">
+	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Real Estate</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="RealEstate, Loan, Sale, Home, Sell, Buy, Rent, Search,Real Estate News" />
     <meta name="keywords" content="RealEstate, Loan, Sale, Home, Sell, Buy, Rent, Search,Real Estate News" />
     <meta name="author" content="Alparslan, Berk, Kerem" />
 
-    <link rel="shortcut icon" href="images/favicon.ico	" type="image/x-icon">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,300' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/icomoon.css">
@@ -25,91 +23,10 @@
     <link rel="stylesheet" href="css/cs-skin-border.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/modernizr-2.6.2.min.js"></script>
-
-
-     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-			
-        }
-
-        h2 {
-            margin-bottom: 20px;
-        }
-
-
-
-        .property-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-
-        .property {
-            width: calc(15% - 10px);
-            flex-basis: calc(45% - 40px);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 50px;
-            padding: 20px;
-            background-color: #f5f5f5;
-            border-radius: 5px;
-        }
-
-        .property img {
-            width: 200px;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 5px;
-            margin-bottom: 10px;
-        }
-
-
-        .property h3 {
-            margin-top: 0;
-            margin-bottom: 10px;
-        }
-
-        .property p {
-            margin: 0;
-        }
-
-        #search-form {
-            margin-bottom: 20px;
-        }
-
-        .inputBoxSell {
-            margin-bottom: 10px;
-        }
-
-        .inputBoxSell input {
-            width: 200px;
-            padding: 5px;
-        }
-
-        #search-button {
-            padding: 11px 26px;
-            background-color: #0f1f10;
-            border: none;
-            color: white;
-            cursor: pointer;
-        }
-
-        #search-button:hover {
-            background-color: #4CAF50;
-        }
-    </style>
-	
- 
-	
 </head>
-
 <body>
- <div id="fh5co-wrapper">
+    <div id="fh5co-wrapper">
         <div id="fh5co-page">
-
             <header id="fh5co-header-section" class="sticky-banner">
                 <div class="container">
                     <div class="nav-header">
@@ -117,80 +34,61 @@
                         <h1 id="fh5co-logo"><a href="index.php"><i class="icon-home"></i>Real<span>Estate.bg</span></a></h1>
                         <nav id="fh5co-menu-wrap" role="navigation">
                             <ul class="sf-menu" id="fh5co-primary-menu">
-							
-							
-								<li><a href=index.php">News</a></li>
+                                <li><a href="index.php">News</a></li>
                                 <li><a href="index.php#fh5co-about">Agent Finder</a></li>
-
                                 <li><a href="buy.php">Buy</a></li>
                                 <li><a href="rent.php">Rent</a></li>
                                 <li><a href="sell.php">Sell</a></li>
-
-                                <li><a href="search.php">Search</a></li>
-
+                                <li class="active"><a href="search.php">Search</a></li>
                                 <li><a href="loan-calculator.php">Loan Calculator</a></li>
-
                                 <li><a href="signin.php">Login</a></li>
-								<li class="active"><a href="signup.php">Sign Up</a></li>
-                               
-
+                                <li><a href="signup.php">Sign Up</a></li>
                             </ul>
                         </nav>
                     </div>
+                </div>
             </header>
+       
+<!-- Form -->
+<form method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
+    <div id="searchBody">
+        <center><h2>Search Properties</h2></center><br>
+        <div class="row">
+    
+                <div class="searchBox">
+                    <label for="from">Name:</label>
+                    <input type="text" class="form-control" name="name" id="from-place" placeholder="Any" />
                 </div>
-
-<form id="search-form" method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
-            <div id="fh5co-search-map">
-                <div class="search-property">
-                    <div class="s-holder">
-                     <center>   <h2>Search Properties</h2> </center>  <br>
-                        <div class="row">
-                            <div class="col-xxs-12 col-xs-12">
-                                <div class="input-field">
-                                    <label for="from">Name:</label>
-                                    <input type="text" class="form-control" name="name" id="from-place" placeholder="Any" />
-                                </div>
-                            </div>
-							    <div class="col-xxs-12 col-xs-12">
-                                <div class="input-field">
-                                    <label for="from">Surname:</label>
-                                    <input type="text" class="form-control" name="surname" id="from-place" placeholder="Any" />
-                                </div>
-                            </div>
-								<div class="col-xxs-12 col-xs-12">
-                                <div class="input-field">
-                                    <label for="from">Price:</label>
-                                    <input type="text" class="form-control" name="price" id="from-place" placeholder="Type" />
-                                </div>
-                            </div>
-                            <div class="col-xxs-12 col-xs-12">
-                                <div class="input-field">
-                                    <label for="from">Location:</label>
-                                    <input type="text" class="form-control" name="address" id="from-place" placeholder="Type" />
-                                </div>
-                            </div>
-							    <div class="col-xxs-12 col-xs-12">
-                                <div class="input-field">
-                                    <label for="from">E-Mail:</label>
-                                    <input type="text" class="form-control" name="email" id="from-place" placeholder="Type" />
-                                </div>
-                            </div>
-
-                            </section>
-                        </div>
-                        <div class="col-xxs-12 col-xs-12 text-center">
-				 <input id="search-button" type="submit" value="Search">   
-  
-                        </div>
-                    </div>
+        
+                <div class="searchBox">
+                    <label for="from">Surname:</label>
+                    <input type="text" class="form-control" name="surname" id="from-place" placeholder="Any" />
                 </div>
+    
+                <div class="searchBox">
+                    <label for="from">Price:</label>
+                    <input type="text" class="form-control" name="price" id="from-place" placeholder="Type" />
+                </div>
+            
+                <div class="searchBox">
+                    <label for="from">Location:</label>
+                    <input type="text" class="form-control" name="address" id="from-place" placeholder="Type" />
+                </div>
+            
+                <div class="searchBox">
+                    <label for="from">Email:</label>
+                    <input type="text" class="form-control" name="email" id="from-place" placeholder="Type" />
+                </div>
+            
+            <div class="searchBoxButton">
+                <input id="search-button" type="submit" value="Search">
             </div>
+        </div>   
+    </div>
 </form>
-
-
-
-
+<!-- Form end -->
+<div id="bodySearch">
+<div id="containerSearch">
 <?php
 require 'database.php';
 
@@ -237,9 +135,10 @@ if ($result->num_rows > 0) {
     // Sonuçları döngüyle işle
     while ($row = $result->fetch_assoc()) {
         // Sonuçları kullanarak kartları oluştur
-        echo '<div class="property">';
+        echo '<div class="card">';
 		echo '<p><strong> <center> Sale </center></strong>'  . '</p>';
         echo '<img src="' . $row["picture"] . '" alt="House Image">';
+        echo '<div class="card-details">';
         echo '<h3>' . $row["title"] . '</h3>';
         echo '<p>Name: ' . $row["name"] . '</p>';
         echo '<p>Surname: ' . $row["surname"] . '</p>';
@@ -249,11 +148,17 @@ if ($result->num_rows > 0) {
         echo '<p>Size: ' . $row["size"] .' EUR'. '</p>';
         echo '<p>Price: ' . $row["price"] . '</p>';
         echo '</div>';
+        echo '</div>';
     }
 } else {
-    echo "";
+    echo "Sale 404 Error";
 }
+?>
 
+</div></div>
+<div id="bodySearch">
+<div id="containerSearch">
+<?php
 // Arama sorgusu oluştur (rent tablosu için)
 $sql_rent = "SELECT * FROM rent WHERE 1=1";
 
@@ -289,9 +194,10 @@ if ($result_rent->num_rows > 0) {
     // Sonuçları döngüyle işle
     while ($row_rent = $result_rent->fetch_assoc()) {
         // Sonuçları kullanarak kartları oluştur
-        echo '<div class="property">';
+        echo '<div class="card">';
 		echo '<p><strong> <center> Rent </center></strong>'  . '</p>';
         echo '<img src="' . $row_rent["picture"] . '" alt="House Image">';
+        echo '<div class="card-details">';
         echo '<h3>' . $row_rent["title"] . '</h3>';
         echo '<p>Name: ' . $row_rent["name"] . '</p>';
         echo '<p>Surname: ' . $row_rent["surname"] . '</p>';
@@ -301,14 +207,16 @@ if ($result_rent->num_rows > 0) {
         echo '<p>Size: ' . $row_rent["size"] . '</p>';
         echo '<p>Price: ' . $row_rent["price"] .' EUR/per month'. '</p>';
         echo '</div>';
+        echo '</div>';
     }
 } else {
-    echo "";
+    echo "<br>Rent 404 Error";
 }
 
 // Veritabanı bağlantısını kapat
 $conn->close();
 ?>
+</div></div>
 
 </div>
 </div>

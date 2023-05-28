@@ -40,7 +40,7 @@
                             <ul class="sf-menu" id="fh5co-primary-menu">
 							
 							
-								<li><a href="index.php">News</a></li>
+								<li class="active"><a href="index.php">News</a></li>
                                 <li><a href="index.php#fh5co-about">Agent Finder</a></li>
 
                                 <li><a href="buy.php">Buy</a></li>
@@ -52,7 +52,7 @@
                                 <li><a href="loan-calculator.php">Loan Calculator</a></li>
 
                                 <li><a href="signin.php">Login</a></li>
-								<li class="active"><a href="signup.php">Sign Up</a></li>
+								<li><a href="signup.php">Sign Up</a></li>
                                
 
                             </ul>
